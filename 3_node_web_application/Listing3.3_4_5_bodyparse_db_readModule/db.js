@@ -3,12 +3,12 @@ const dbName = 'later.sqlite';
 const db = new sqlite3.Database(dbName); // a database file is opened by using sqlite3.Database
 
 db.serialize(() => { // creates an "articles" table if there isn't one
-  const sql = `CREATE TABLE IF NOT EXISTS articles
+  const sql = `
+  CREATE TABLE IF NOT EXISTS articles
   (id integer primary key, title, content TEXT)
 `;
-  db.run(sql); // sqlite3.run is used to create (or delete) data
+  db.run(sql); // sqlite3.run is used to create data
 }); // when the database and table are ready, the application is ready to make queries
-
 
 // NOTE ABOUT STATIC
 // STATIC METHOD: these are used to define method on class level as opposed to instance level
@@ -30,7 +30,7 @@ class Article { // can fetch, create, delete data
 
   static delete(id, cb) {
     if (!id) return cb(new Error('Please provide an id'));
-    db.run('DELETE FROM articles WHERE id = ?', id, cb);
+    db.run('DELETE FROM articles WHERE id = ?', id, cb);  // db run can also be used to delete data
   }
 }
 

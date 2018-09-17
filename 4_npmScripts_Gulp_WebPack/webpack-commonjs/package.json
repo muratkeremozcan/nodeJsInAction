@@ -1,17 +1,17 @@
 {
-  "name": "3.1_RESTful_routes",
+  "name": "webpack-commonjs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.12.4"
+  "dependencies": {},
+  "devDependencies": {
+    "jquery": "^2.2.1",
+    "webpack": "^1.12.14"
   }
 }

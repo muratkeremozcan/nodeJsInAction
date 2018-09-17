@@ -17,7 +17,6 @@ app.get('/', (req, res) => { // adding a root route handler
 });
 
 app.get('/articles', (req, res, next) => { // get all articles
-  
   res.send(articles); // respond with the array of articles. Express automatically converts the array to JSON
 });
 
@@ -32,9 +31,9 @@ app.get('/articles/:id', (req, res, next) => { // get a single article
 });
 
 app.delete('/articles/:id', (req, res, next) => { // deletes an article
-  const id = req.params.id; // request parameter binds with the route and gets assigned to a constan
+  const id = req.params.id; // request parameter binds with the route and gets assigned to a constant
   console.log('Deleting:', id);
-  delete articles[id]; // delete array index (the articles are in an array): delete array[index], creates a hole in the array
+  delete articles[id]; // (the articles are in an array): delete array[index], creates a hole in the array
   res.send({ message: 'Deleted' });
 });
 
@@ -44,6 +43,6 @@ app.listen(app.get('port'), () => {
 
 module.exports = app;
 
-// test with curl :  curl http//localhost:3000/articles  , articles/0
 // https://curl.haxx.se/
+// test with curl :  curl http//localhost:3000/articles  , articles/0
 // to post : curl --data "title=Example 2" http://localhost:3000/articles
