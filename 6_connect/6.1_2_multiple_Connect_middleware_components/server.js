@@ -10,7 +10,7 @@ function hello(req, res) {
   res.end('Hello world!');
 }
 connect()
+.use(hello) // switch for 6.2. If hello is called first, logging never happens because hello does not call next()
   .use(logger)
-  .use(hello) // switch for 6.2. If hello is called first, logging never happens because hello does not call next()
   .listen(3000);
 // IMPORTANT: if a component does not call nex(), remaining middleware in the chain will not be invoked

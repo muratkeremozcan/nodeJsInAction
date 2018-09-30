@@ -1,6 +1,6 @@
 const { MongoClient} = require('mongodb');
 
-MongoClient.connect('mongodb://localhost:27017/articles')
+MongoClient.connect('mongodb://localhost:27017/articles') // connect to db
   .then(db => {
     console.log('Client ready');
 
